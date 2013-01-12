@@ -1,10 +1,11 @@
 import tweepy
 import turtle
 import secrets
+import validation
 
 class StreamListener(tweepy.StreamListener):
     def on_status(self, status):
-        print(status.text)
+        validation.supply_words(status.text.split())
 
 def init_scraper():    
     conkey,consecret,acctok,acctoksecret = secrets.get_secrets()
