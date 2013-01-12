@@ -1,0 +1,659 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module models</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>models</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/sboucher/Desktop/tweepy/models.py">/home/sboucher/Desktop/tweepy/models.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;Tweepy<br>
+#&nbsp;Copyright&nbsp;2009-2010&nbsp;Joshua&nbsp;Roesslein<br>
+#&nbsp;See&nbsp;LICENSE&nbsp;for&nbsp;details.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#list">__builtin__.list</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#ResultSet">ResultSet</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#Model">Model</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="models.html#DirectMessage">DirectMessage</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Friendship">Friendship</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#IDModel">IDModel</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#JSONModel">JSONModel</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#List">List</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Relation">Relation</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Relationship">Relationship</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#SavedSearch">SavedSearch</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#SearchResult">SearchResult</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#Status">Status</a>
+</font></dt><dt><font face="helvetica, arial"><a href="models.html#User">User</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="models.html#ModelFactory">ModelFactory</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DirectMessage">class <strong>DirectMessage</strong></a>(<a href="models.html#Model">Model</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#DirectMessage">DirectMessage</a></dd>
+<dd><a href="models.html#Model">Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DirectMessage-destroy"><strong>destroy</strong></a>(self)</dt></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="DirectMessage-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="DirectMessage-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DirectMessage-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Class methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="DirectMessage-parse_list"><strong>parse_list</strong></a>(cls, api, json_list)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Parse&nbsp;a&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;of&nbsp;JSON&nbsp;objects&nbsp;into&nbsp;a&nbsp;result&nbsp;set&nbsp;of&nbsp;model&nbsp;instances.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Friendship">class <strong>Friendship</strong></a>(<a href="models.html#Model">Model</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Friendship">Friendship</a></dd>
+<dd><a href="models.html#Model">Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Friendship-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="Friendship-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Friendship-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Class methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="Friendship-parse_list"><strong>parse_list</strong></a>(cls, api, json_list)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Parse&nbsp;a&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;of&nbsp;JSON&nbsp;objects&nbsp;into&nbsp;a&nbsp;result&nbsp;set&nbsp;of&nbsp;model&nbsp;instances.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="IDModel">class <strong>IDModel</strong></a>(<a href="models.html#Model">Model</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#IDModel">IDModel</a></dd>
+<dd><a href="models.html#Model">Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="IDModel-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="IDModel-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="IDModel-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Class methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="IDModel-parse_list"><strong>parse_list</strong></a>(cls, api, json_list)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Parse&nbsp;a&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;of&nbsp;JSON&nbsp;objects&nbsp;into&nbsp;a&nbsp;result&nbsp;set&nbsp;of&nbsp;model&nbsp;instances.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="JSONModel">class <strong>JSONModel</strong></a>(<a href="models.html#Model">Model</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#JSONModel">JSONModel</a></dd>
+<dd><a href="models.html#Model">Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="JSONModel-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="JSONModel-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="JSONModel-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Class methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="JSONModel-parse_list"><strong>parse_list</strong></a>(cls, api, json_list)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Parse&nbsp;a&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;of&nbsp;JSON&nbsp;objects&nbsp;into&nbsp;a&nbsp;result&nbsp;set&nbsp;of&nbsp;model&nbsp;instances.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="List">class <strong>List</strong></a>(<a href="models.html#Model">Model</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#List">List</a></dd>
+<dd><a href="models.html#Model">Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="List-add_member"><strong>add_member</strong></a>(self, id)</dt></dl>
+
+<dl><dt><a name="List-destroy"><strong>destroy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="List-is_member"><strong>is_member</strong></a>(self, id)</dt></dl>
+
+<dl><dt><a name="List-is_subscribed"><strong>is_subscribed</strong></a>(self, id)</dt></dl>
+
+<dl><dt><a name="List-members"><strong>members</strong></a>(self, **kargs)</dt></dl>
+
+<dl><dt><a name="List-remove_member"><strong>remove_member</strong></a>(self, id)</dt></dl>
+
+<dl><dt><a name="List-subscribe"><strong>subscribe</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="List-subscribers"><strong>subscribers</strong></a>(self, **kargs)</dt></dl>
+
+<dl><dt><a name="List-timeline"><strong>timeline</strong></a>(self, **kargs)</dt></dl>
+
+<dl><dt><a name="List-unsubscribe"><strong>unsubscribe</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="List-update"><strong>update</strong></a>(self, **kargs)</dt></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="List-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<dl><dt><a name="List-parse_list"><strong>parse_list</strong></a>(cls, api, json_list, result_set<font color="#909090">=None</font>)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="List-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="List-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Model">class <strong>Model</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Model-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Model-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Model-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Parse&nbsp;a&nbsp;JSON&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;into&nbsp;a&nbsp;model&nbsp;instance.</tt></dd></dl>
+
+<dl><dt><a name="Model-parse_list"><strong>parse_list</strong></a>(cls, api, json_list)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Parse&nbsp;a&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;of&nbsp;JSON&nbsp;objects&nbsp;into&nbsp;a&nbsp;result&nbsp;set&nbsp;of&nbsp;model&nbsp;instances.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ModelFactory">class <strong>ModelFactory</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Used&nbsp;by&nbsp;parsers&nbsp;for&nbsp;creating&nbsp;instances<br>
+of&nbsp;models.&nbsp;You&nbsp;may&nbsp;subclass&nbsp;this&nbsp;factory<br>
+to&nbsp;add&nbsp;your&nbsp;own&nbsp;extended&nbsp;models.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>direct_message</strong> = &lt;class 'models.DirectMessage'&gt;</dl>
+
+<dl><dt><strong>friendship</strong> = &lt;class 'models.Friendship'&gt;</dl>
+
+<dl><dt><strong>ids</strong> = &lt;class 'models.IDModel'&gt;</dl>
+
+<dl><dt><strong>json</strong> = &lt;class 'models.JSONModel'&gt;</dl>
+
+<dl><dt><strong>list</strong> = &lt;class 'models.List'&gt;</dl>
+
+<dl><dt><strong>relation</strong> = &lt;class 'models.Relation'&gt;</dl>
+
+<dl><dt><strong>relationship</strong> = &lt;class 'models.Relationship'&gt;</dl>
+
+<dl><dt><strong>saved_search</strong> = &lt;class 'models.SavedSearch'&gt;</dl>
+
+<dl><dt><strong>search_result</strong> = &lt;class 'models.SearchResult'&gt;</dl>
+
+<dl><dt><strong>status</strong> = &lt;class 'models.Status'&gt;</dl>
+
+<dl><dt><strong>user</strong> = &lt;class 'models.User'&gt;</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Relation">class <strong>Relation</strong></a>(<a href="models.html#Model">Model</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Relation">Relation</a></dd>
+<dd><a href="models.html#Model">Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Relation-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="Relation-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Relation-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Class methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="Relation-parse_list"><strong>parse_list</strong></a>(cls, api, json_list)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Parse&nbsp;a&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;of&nbsp;JSON&nbsp;objects&nbsp;into&nbsp;a&nbsp;result&nbsp;set&nbsp;of&nbsp;model&nbsp;instances.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Relationship">class <strong>Relationship</strong></a>(<a href="models.html#Model">Model</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Relationship">Relationship</a></dd>
+<dd><a href="models.html#Model">Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Relationship-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="Relationship-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Relationship-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Class methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="Relationship-parse_list"><strong>parse_list</strong></a>(cls, api, json_list)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Parse&nbsp;a&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;of&nbsp;JSON&nbsp;objects&nbsp;into&nbsp;a&nbsp;result&nbsp;set&nbsp;of&nbsp;model&nbsp;instances.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ResultSet">class <strong>ResultSet</strong></a>(<a href="__builtin__.html#list">__builtin__.list</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;like&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;that&nbsp;holds&nbsp;results&nbsp;from&nbsp;a&nbsp;Twitter&nbsp;API&nbsp;query.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#ResultSet">ResultSet</a></dd>
+<dd><a href="__builtin__.html#list">__builtin__.list</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="__builtin__.html#list">__builtin__.list</a>:<br>
+<dl><dt><a name="ResultSet-__add__"><strong>__add__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__add__">__add__</a>(y)&nbsp;&lt;==&gt;&nbsp;x+y</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__contains__"><strong>__contains__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__contains__">__contains__</a>(y)&nbsp;&lt;==&gt;&nbsp;y&nbsp;in&nbsp;x</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__delitem__"><strong>__delitem__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__delitem__">__delitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;del&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__delslice__"><strong>__delslice__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__delslice__">__delslice__</a>(i,&nbsp;j)&nbsp;&lt;==&gt;&nbsp;del&nbsp;x[i:j]<br>
+&nbsp;<br>
+Use&nbsp;of&nbsp;negative&nbsp;indices&nbsp;is&nbsp;not&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__eq__"><strong>__eq__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__eq__">__eq__</a>(y)&nbsp;&lt;==&gt;&nbsp;x==y</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__ge__"><strong>__ge__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__ge__">__ge__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&gt;=y</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__getitem__"><strong>__getitem__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__getitem__">__getitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__getslice__"><strong>__getslice__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__getslice__">__getslice__</a>(i,&nbsp;j)&nbsp;&lt;==&gt;&nbsp;x[i:j]<br>
+&nbsp;<br>
+Use&nbsp;of&nbsp;negative&nbsp;indices&nbsp;is&nbsp;not&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__gt__"><strong>__gt__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__gt__">__gt__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&gt;y</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__iadd__"><strong>__iadd__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__iadd__">__iadd__</a>(y)&nbsp;&lt;==&gt;&nbsp;x+=y</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__imul__"><strong>__imul__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__imul__">__imul__</a>(y)&nbsp;&lt;==&gt;&nbsp;x*=y</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;help(type(x))&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__iter__"><strong>__iter__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__iter__">__iter__</a>()&nbsp;&lt;==&gt;&nbsp;iter(x)</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__le__"><strong>__le__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__le__">__le__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&lt;=y</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__len__"><strong>__len__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__len__">__len__</a>()&nbsp;&lt;==&gt;&nbsp;len(x)</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__lt__"><strong>__lt__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__lt__">__lt__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&lt;y</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__mul__"><strong>__mul__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__mul__">__mul__</a>(n)&nbsp;&lt;==&gt;&nbsp;x*n</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__ne__"><strong>__ne__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__ne__">__ne__</a>(y)&nbsp;&lt;==&gt;&nbsp;x!=y</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__reversed__"><strong>__reversed__</strong></a>(...)</dt><dd><tt>L.<a href="#ResultSet-__reversed__">__reversed__</a>()&nbsp;--&nbsp;return&nbsp;a&nbsp;reverse&nbsp;iterator&nbsp;over&nbsp;the&nbsp;<a href="__builtin__.html#list">list</a></tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__rmul__"><strong>__rmul__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__rmul__">__rmul__</a>(n)&nbsp;&lt;==&gt;&nbsp;n*x</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__setitem__"><strong>__setitem__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__setitem__">__setitem__</a>(i,&nbsp;y)&nbsp;&lt;==&gt;&nbsp;x[i]=y</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__setslice__"><strong>__setslice__</strong></a>(...)</dt><dd><tt>x.<a href="#ResultSet-__setslice__">__setslice__</a>(i,&nbsp;j,&nbsp;y)&nbsp;&lt;==&gt;&nbsp;x[i:j]=y<br>
+&nbsp;<br>
+Use&nbsp;&nbsp;of&nbsp;negative&nbsp;indices&nbsp;is&nbsp;not&nbsp;supported.</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-__sizeof__"><strong>__sizeof__</strong></a>(...)</dt><dd><tt>L.<a href="#ResultSet-__sizeof__">__sizeof__</a>()&nbsp;--&nbsp;size&nbsp;of&nbsp;L&nbsp;in&nbsp;memory,&nbsp;in&nbsp;bytes</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-append"><strong>append</strong></a>(...)</dt><dd><tt>L.<a href="#ResultSet-append">append</a>(<a href="__builtin__.html#object">object</a>)&nbsp;--&nbsp;append&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;to&nbsp;end</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-count"><strong>count</strong></a>(...)</dt><dd><tt>L.<a href="#ResultSet-count">count</a>(value)&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;number&nbsp;of&nbsp;occurrences&nbsp;of&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-extend"><strong>extend</strong></a>(...)</dt><dd><tt>L.<a href="#ResultSet-extend">extend</a>(iterable)&nbsp;--&nbsp;extend&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;by&nbsp;appending&nbsp;elements&nbsp;from&nbsp;the&nbsp;iterable</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-index"><strong>index</strong></a>(...)</dt><dd><tt>L.<a href="#ResultSet-index">index</a>(value,&nbsp;[start,&nbsp;[stop]])&nbsp;-&gt;&nbsp;integer&nbsp;--&nbsp;return&nbsp;first&nbsp;index&nbsp;of&nbsp;value.<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-insert"><strong>insert</strong></a>(...)</dt><dd><tt>L.<a href="#ResultSet-insert">insert</a>(index,&nbsp;<a href="__builtin__.html#object">object</a>)&nbsp;--&nbsp;insert&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;before&nbsp;index</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-pop"><strong>pop</strong></a>(...)</dt><dd><tt>L.<a href="#ResultSet-pop">pop</a>([index])&nbsp;-&gt;&nbsp;item&nbsp;--&nbsp;remove&nbsp;and&nbsp;return&nbsp;item&nbsp;at&nbsp;index&nbsp;(default&nbsp;last).<br>
+Raises&nbsp;IndexError&nbsp;if&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;is&nbsp;empty&nbsp;or&nbsp;index&nbsp;is&nbsp;out&nbsp;of&nbsp;range.</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-remove"><strong>remove</strong></a>(...)</dt><dd><tt>L.<a href="#ResultSet-remove">remove</a>(value)&nbsp;--&nbsp;remove&nbsp;first&nbsp;occurrence&nbsp;of&nbsp;value.<br>
+Raises&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;value&nbsp;is&nbsp;not&nbsp;present.</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-reverse"><strong>reverse</strong></a>(...)</dt><dd><tt>L.<a href="#ResultSet-reverse">reverse</a>()&nbsp;--&nbsp;reverse&nbsp;*IN&nbsp;PLACE*</tt></dd></dl>
+
+<dl><dt><a name="ResultSet-sort"><strong>sort</strong></a>(...)</dt><dd><tt>L.<a href="#ResultSet-sort">sort</a>(cmp=None,&nbsp;key=None,&nbsp;reverse=False)&nbsp;--&nbsp;stable&nbsp;sort&nbsp;*IN&nbsp;PLACE*;<br>
+cmp(x,&nbsp;y)&nbsp;-&gt;&nbsp;-1,&nbsp;0,&nbsp;1</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="__builtin__.html#list">__builtin__.list</a>:<br>
+<dl><dt><strong>__hash__</strong> = None</dl>
+
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#ResultSet-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SavedSearch">class <strong>SavedSearch</strong></a>(<a href="models.html#Model">Model</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#SavedSearch">SavedSearch</a></dd>
+<dd><a href="models.html#Model">Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SavedSearch-destroy"><strong>destroy</strong></a>(self)</dt></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="SavedSearch-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="SavedSearch-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="SavedSearch-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Class methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="SavedSearch-parse_list"><strong>parse_list</strong></a>(cls, api, json_list)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Parse&nbsp;a&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;of&nbsp;JSON&nbsp;objects&nbsp;into&nbsp;a&nbsp;result&nbsp;set&nbsp;of&nbsp;model&nbsp;instances.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SearchResult">class <strong>SearchResult</strong></a>(<a href="models.html#Model">Model</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#SearchResult">SearchResult</a></dd>
+<dd><a href="models.html#Model">Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="SearchResult-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<dl><dt><a name="SearchResult-parse_list"><strong>parse_list</strong></a>(cls, api, json_list, result_set<font color="#909090">=None</font>)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="SearchResult-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="SearchResult-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Status">class <strong>Status</strong></a>(<a href="models.html#Model">Model</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#Status">Status</a></dd>
+<dd><a href="models.html#Model">Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Status-destroy"><strong>destroy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Status-favorite"><strong>favorite</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Status-retweet"><strong>retweet</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Status-retweets"><strong>retweets</strong></a>(self)</dt></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="Status-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="Status-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Status-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Class methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="Status-parse_list"><strong>parse_list</strong></a>(cls, api, json_list)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt><dd><tt>Parse&nbsp;a&nbsp;<a href="__builtin__.html#list">list</a>&nbsp;of&nbsp;JSON&nbsp;objects&nbsp;into&nbsp;a&nbsp;result&nbsp;set&nbsp;of&nbsp;model&nbsp;instances.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="User">class <strong>User</strong></a>(<a href="models.html#Model">Model</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="models.html#User">User</a></dd>
+<dd><a href="models.html#Model">Model</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="User-follow"><strong>follow</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="User-followers"><strong>followers</strong></a>(self, **kargs)</dt></dl>
+
+<dl><dt><a name="User-followers_ids"><strong>followers_ids</strong></a>(self, *args, **kargs)</dt></dl>
+
+<dl><dt><a name="User-friends"><strong>friends</strong></a>(self, **kargs)</dt></dl>
+
+<dl><dt><a name="User-lists"><strong>lists</strong></a>(self, *args, **kargs)</dt></dl>
+
+<dl><dt><a name="User-lists_memberships"><strong>lists_memberships</strong></a>(self, *args, **kargs)</dt></dl>
+
+<dl><dt><a name="User-lists_subscriptions"><strong>lists_subscriptions</strong></a>(self, *args, **kargs)</dt></dl>
+
+<dl><dt><a name="User-timeline"><strong>timeline</strong></a>(self, **kargs)</dt></dl>
+
+<dl><dt><a name="User-unfollow"><strong>unfollow</strong></a>(self)</dt></dl>
+
+<hr>
+Class methods defined here:<br>
+<dl><dt><a name="User-parse"><strong>parse</strong></a>(cls, api, json)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<dl><dt><a name="User-parse_list"><strong>parse_list</strong></a>(cls, api, json_list)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Methods inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><a name="User-__getstate__"><strong>__getstate__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="User-__init__"><strong>__init__</strong></a>(self, api<font color="#909090">=None</font>)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="models.html#Model">Model</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
