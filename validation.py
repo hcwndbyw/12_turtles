@@ -1,3 +1,4 @@
+import runner
 command_templates = { "forward": ("forward", [int]), "backward": ("backward", [int]) }
 command_instances = {} 
 types_waiting = {}
@@ -8,6 +9,7 @@ class Command():
     def __init__(self, name, needed_params):
         self.needed_params = needed_params
         self.name = name
+        self.params = []
 
     def next_needed_type(self):
         return self.needed_params[0]
@@ -15,14 +17,16 @@ class Command():
     def supply_arg(self, p):
         ''' type of the param has been checked return True if this has been sent to run false if not'''
         self.params.append(p)
-        self.needed_params = need_params[1:]
+        self.needed_params.pop(0)
         if len(self.needed_params) == 0:
-            send_to_run(str(self))
+            runner.giveCommand(str(self))
             return True
         return False
             
     def __str__(self):
-        return name + '(' + str(params)[1:-1] + ')'
+        return self.name + '(' + str(self.params)[1:-1] + ')'
+    def __repr__(self):
+        return str(self)
 
 def safe_append(dictionary, key, val):
     if not key in dictionary:
@@ -32,26 +36,22 @@ def safe_append(dictionary, key, val):
 def append_cmds_processing(cmd):
     temp = Command(*command_templates[cmd])
     safe_append(command_instances, cmd, temp)
-#    if not cmd in command_instances:
-#        command_instance[cmd] = []
-#
-#    command_instances[cmd].append(temp)
-
     safe_append(types_waiting, temp.next_needed_type(), temp)
-#    if not temp.next_needed_type() in types_wating:
-#        types_waiting[temp.next_needed_type()] = []
-#    types_waiting[temp.next_needed_type()].append(temp)
 
 def try_parse_type(word):
     for possibleType in types_waiting:
-        print possibleType
         try:
             temp = possibleType(word)
-            t = types_waiting[temp]
-            types_waiting[temp] = types_waiting[1:]
-            if not types_waiting[temp].supply_arg(word): #didn't complete call
+            t = types_waiting[possibleType][0]
+            types_waiting[possibleType] = types_waiting[possibleType][1:]
+            if not t.supply_arg(temp): #didn't complete call
                 safe_append(types_waiting, t.next_needed_type(), t)
-#                types_waiting[t.next_needed_type()].append( t )
+            else:
+               for i in range(len(command_instances[temp.name])):
+                   if command_instance[temp.name][i] == t:
+                        print 'deleteing'
+                        command_instance[temp.name].pop(i)
+                        break
         except:
             continue
 
