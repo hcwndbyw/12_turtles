@@ -7,11 +7,12 @@ class Command():
     __slots__ = ['needed_params', 'params', 'name']
 
     def __init__(self, name, needed_params):
-        self.needed_params = needed_params
+        self.needed_params = needed_params[:]
         self.name = name
         self.params = []
 
     def next_needed_type(self):
+        print len(self.needed_params)
         return self.needed_params[0]
 
     def supply_arg(self, p):
@@ -41,17 +42,20 @@ def append_cmds_processing(cmd):
 def try_parse_type(word):
     for possibleType in types_waiting:
         try:
-            temp = possibleType(word)
-            t = types_waiting[possibleType][0]
+            typeWanted = possibleType(word)
+            fnCall = types_waiting[possibleType][0]
             types_waiting[possibleType] = types_waiting[possibleType][1:]
-            if not t.supply_arg(temp): #didn't complete call
-                safe_append(types_waiting, t.next_needed_type(), t)
+            if not fnCall.supply_arg(typeWanted): #didn'fnCall complete call
+                safe_append(types_waiting, fnCall.next_needed_type(), fnCall)
             else:
-               for i in range(len(command_instances[temp.name])):
-                   if command_instance[temp.name][i] == t:
-                        print 'deleteing'
+                print command_instances[fnCall.name]
+                command_instances[fnCall.name].remove(fnCall)
+                print command_instances[fnCall.name]
+                '''
+                for i in range(len(command_instances[temp.name])):
+                    if command_instance[temp.name][i] == t:
                         command_instance[temp.name].pop(i)
-                        break
+                        break'''
         except:
             continue
 
