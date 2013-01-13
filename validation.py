@@ -19,15 +19,15 @@ command_templates = {
     "sety": ("sety", [int]),
     #setheading
     #seth
-    #home
+    "home": ("home", []),
     "circle": ("circle", [int]), #only radius
     "dot": ("dot", [int]), #only size
-    #"stamp"
+    "stamp": ("stamp", []),
     #clearstamp
-    #undo
+    "undo": ("undo", []),
     #speed
-    #degrees
-    #radians
+    "degrees": ("degrees", []), #noargs
+    "radians": ("radians", []),
     #pendown
     #pd
     #down
@@ -35,14 +35,14 @@ command_templates = {
     #pu
     #up
     "pensize": ("pensize", [int]), #force a param
-    "width": ("width", [int])
+    "width": ("width", [int]),
     #pen
     #color
     #pencolor
     #fillcolor
     #fill
-    #beginfill
-    #endfill
+    "begin_fill": ("begin_fill", []),
+    "end_fill": ("end_fill", [])
     #reset
     #clear
     #write
@@ -77,6 +77,8 @@ class Command():
 
     def supply_arg(self, p, tweet):
         ''' type of the param has been checked return True if this has been sent to run false if not'''
+        if type(p) == int:
+            p = p%1000
         self.add_tweet(tweet)
         self.params.append(p)
         self.needed_params.pop(0)
@@ -100,8 +102,12 @@ def safe_append(dictionary, key, val):
 def append_cmds_processing(cmd, tweet):
     temp = Command(*command_templates[cmd])
     temp.add_tweet(tweet)
-    safe_append(command_instances, cmd, temp)
-    safe_append(types_waiting, temp.next_needed_type(), temp)
+    if len(temp.needed_params) == 0:
+        temp.print_tweets()
+        runner.giveCommand(str(temp))
+    else:
+        safe_append(command_instances, cmd, temp)
+        safe_append(types_waiting, temp.next_needed_type(), temp)
 
 def try_parse_type(word, tweet):
     for possibleType in types_waiting:
