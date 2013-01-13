@@ -1,4 +1,5 @@
 import runner
+
 runner._init()
 
 command_templates = { 
@@ -20,13 +21,35 @@ command_templates = {
     #seth
     #home
     "circle": ("circle", [int]), #only radius
-    "dot": ("dot", [int]) #only size
+    "dot": ("dot", [int]), #only size
     #"stamp"
     #clearstamp
     #undo
-    #speed()
-}
+    #speed
+    #degrees
+    #radians
+    #pendown
+    #pd
+    #down
+    #penup
+    #pu
+    #up
+    "pensize": ("pensize", [int]), #force a param
+    "width": ("width", [int])
+    #pen
+    #color
+    #pencolor
+    #fillcolor
+    #fill
+    #beginfill
+    #endfill
+    #reset
+    #clear
+    #write
+    #begin_poly
+    #end_poly
 
+}
 
 command_instances = {} 
 types_waiting = {}
@@ -47,14 +70,14 @@ class Command():
         return self.needed_params[0]
 
     def print_tweets(self):
-        print "Brought to you by: "
+        print (str(self) + "\n Brought to you by:")
         for tweet in self.tweets:
-            print tweet.user.name
-            print tweet.text
+            print "    " +tweet.user.name+ ":\n        "+ tweet.text
         print
 
-    def supply_arg(self, p):
+    def supply_arg(self, p, tweet):
         ''' type of the param has been checked return True if this has been sent to run false if not'''
+        self.add_tweet(tweet)
         self.params.append(p)
         self.needed_params.pop(0)
         if len(self.needed_params) == 0:
@@ -65,6 +88,7 @@ class Command():
             
     def __str__(self):
         return self.name + '(' + str(self.params)[1:-1] + ')'
+
     def __repr__(self):
         return str(self)
 
@@ -85,11 +109,11 @@ def try_parse_type(word, tweet):
             typeWanted = possibleType(word)
             fnCall = types_waiting[possibleType][0]
             types_waiting[possibleType] = types_waiting[possibleType][1:]
-            if not fnCall.supply_arg(typeWanted): #didn'fnCall complete call
+            if not fnCall.supply_arg(typeWanted, tweet): #didn't complete call
                 safe_append(types_waiting, fnCall.next_needed_type(), fnCall)
-                fnCall.add_tweet(tweet)
             else:
                 command_instances[fnCall.name].remove(fnCall)
+            break
         except:
             continue
 
