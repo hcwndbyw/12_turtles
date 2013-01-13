@@ -1,11 +1,18 @@
 from Tkinter import *
 import turtle
+import datetime
 
 xCoor = 400
 yCoor = 300
 
 def _init():
+    root = Tk()
+    menubar = Menu(root)
+    menubar.add_command(label="Save", command=save_image) 
+    menubar.add_command(label="Clear", command=_clear)
+    root.config(menu=menubar)
     turtle.speed(0)
+    turtle.delay(0)
     turtle.setworldcoordinates(-xCoor,-yCoor,xCoor,yCoor)
     turtle.up()
     turtle.setpos(0,0)
@@ -21,9 +28,14 @@ def giveCommand(command):
 """
 filename fn will be an .eps file
 """
-def saveImage(fn):
+def save_image():
+    fn = datetime.datetime.now()
     screen = turtle.getscreen()
     screen.getcanvas().postscript(file=fn)
-    
-    
+
+def _clear():
+    turtle.reset()
+    turtle.bgcolor('white')
+
+   
 

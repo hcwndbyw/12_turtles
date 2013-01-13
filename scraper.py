@@ -2,6 +2,7 @@ import tweepy
 import turtle
 import secrets
 import validation
+import colors
 
 class StreamListener(tweepy.StreamListener):
     def on_status(self, status):
@@ -17,7 +18,8 @@ def init_scraper():
 
     l = StreamListener()
     streamer = tweepy.Stream(auth=auth1, listener=l, timeout=None)
-    searchTerms = dir(turtle)
+    searchTerms = [key for key in validation.command_templates]
+    searchTerms.extend(colors.colors)
     streamer.filter(None, searchTerms)
 
 init_scraper()

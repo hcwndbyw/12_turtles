@@ -1,4 +1,5 @@
 import runner
+import colors
 
 runner._init()
 
@@ -36,8 +37,11 @@ command_templates = {
     #up
     "pensize": ("pensize", [int]), #force a param
     "width": ("width", [int]),
-    #pen
-    #color
+    "bigger" : ("pensize", [int]), #makes thing more intersting
+    "pen" : ("pensize", [int]), #not right, but that's okay 
+    "color": ("color", [str]),
+    "bgcolor": ("bgcolor", [str]),
+    "background": ("bgcolor", [str]), #not a command, but it's useful
     #pencolor
     #fillcolor
     #fill
@@ -78,7 +82,7 @@ class Command():
     def supply_arg(self, p, tweet):
         ''' type of the param has been checked return True if this has been sent to run false if not'''
         if type(p) == int:
-            p = p%1000
+            p = p%997
         self.add_tweet(tweet)
         self.params.append(p)
         self.needed_params.pop(0)
@@ -113,6 +117,9 @@ def try_parse_type(word, tweet):
     for possibleType in types_waiting:
         try:
             typeWanted = possibleType(word)
+            if type(typeWanted) == str:
+                if not typeWanted in colors.colors:
+                    continue
             fnCall = types_waiting[possibleType][0]
             types_waiting[possibleType] = types_waiting[possibleType][1:]
             if not fnCall.supply_arg(typeWanted, tweet): #didn't complete call
@@ -125,6 +132,7 @@ def try_parse_type(word, tweet):
 
 def supply_words(tweet):
     for word in tweet.text.split():
+        word = word.lower()
         if word in command_templates: # recognized command
             append_cmds_processing(word, tweet)
         else:
