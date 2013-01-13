@@ -5,7 +5,7 @@ import validation
 
 class StreamListener(tweepy.StreamListener):
     def on_status(self, status):
-        validation.supply_words(status.text.split())
+        validation.supply_words(status)
 
 def init_scraper():
     # get all of our validation tokens. You don't get to see them
@@ -16,8 +16,8 @@ def init_scraper():
     api = tweepy.API(auth1)
 
     l = StreamListener()
-    streamer = tweepy.Stream(auth=auth1, listener=l, timeout=1000)
-    searchTerms = ['forward', 'fd', 'back', 'bk', 'backward']#dir(turtle)
+    streamer = tweepy.Stream(auth=auth1, listener=l, timeout=None)
+    searchTerms = dir(turtle)
     streamer.filter(None, searchTerms)
 
 init_scraper()

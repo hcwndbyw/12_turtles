@@ -1,25 +1,64 @@
 import runner
-command_templates = { "forward": ("forward", [int]), "backward": ("backward", [int]) }
+runner._init()
+
+command_templates = { 
+    "forward": ("forward", [int]),
+    "fd": ("fd", [int]),            
+    "back": ("back", [int]),
+    "backward": ("backward", [int]),
+    "bk": ("bk", [int]),
+    "right": ("right",[int]),
+    "rt": ("rt", [int]),
+    "left": ("left",[int]),
+    "lt": ("lt", [int]),
+    "goto": ("goto", [int,int]),
+    "setpos": ("setpos", [int,int]),
+    "setposition": ("setposition", [int,int]),
+    "setx": ("setx", [int]),
+    "sety": ("sety", [int]),
+    #setheading
+    #seth
+    #home
+    "circle": ("circle", [int]), #only radius
+    "dot": ("dot", [int]) #only size
+    #"stamp"
+    #clearstamp
+    #undo
+    #speed()
+}
+
+
 command_instances = {} 
 types_waiting = {}
 
 class Command():
-    __slots__ = ['needed_params', 'params', 'name']
+    __slots__ = ['needed_params', 'params', 'name', 'tweets']
 
     def __init__(self, name, needed_params):
         self.needed_params = needed_params[:]
         self.name = name
         self.params = []
+        self.tweets = []
+
+    def add_tweet(self,tweet):
+        self.tweets.append(tweet)
 
     def next_needed_type(self):
-        print len(self.needed_params)
         return self.needed_params[0]
+
+    def print_tweets(self):
+        print "Brought to you by: "
+        for tweet in self.tweets:
+            print tweet.user.name
+            print tweet.text
+        print
 
     def supply_arg(self, p):
         ''' type of the param has been checked return True if this has been sent to run false if not'''
         self.params.append(p)
         self.needed_params.pop(0)
         if len(self.needed_params) == 0:
+            self.print_tweets()
             runner.giveCommand(str(self))
             return True
         return False
@@ -34,12 +73,13 @@ def safe_append(dictionary, key, val):
         dictionary[key] = []
     dictionary[key].append(val)
 
-def append_cmds_processing(cmd):
+def append_cmds_processing(cmd, tweet):
     temp = Command(*command_templates[cmd])
+    temp.add_tweet(tweet)
     safe_append(command_instances, cmd, temp)
     safe_append(types_waiting, temp.next_needed_type(), temp)
 
-def try_parse_type(word):
+def try_parse_type(word, tweet):
     for possibleType in types_waiting:
         try:
             typeWanted = possibleType(word)
@@ -47,23 +87,17 @@ def try_parse_type(word):
             types_waiting[possibleType] = types_waiting[possibleType][1:]
             if not fnCall.supply_arg(typeWanted): #didn'fnCall complete call
                 safe_append(types_waiting, fnCall.next_needed_type(), fnCall)
+                fnCall.add_tweet(tweet)
             else:
-                print command_instances[fnCall.name]
                 command_instances[fnCall.name].remove(fnCall)
-                print command_instances[fnCall.name]
-                '''
-                for i in range(len(command_instances[temp.name])):
-                    if command_instance[temp.name][i] == t:
-                        command_instance[temp.name].pop(i)
-                        break'''
         except:
             continue
 
 def supply_words(tweet):
-    for word in tweet:
+    for word in tweet.text.split():
         if word in command_templates: # recognized command
-            append_cmds_processing(word)
+            append_cmds_processing(word, tweet)
         else:
-            try_parse_type(word)
+            try_parse_type(word, tweet)
 
 
